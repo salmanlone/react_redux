@@ -1,1 +1,1 @@
-# react_redux_example-
+# react_redux
