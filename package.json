@@ -31,5 +31,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "redux-saga": "^1.0.3",
+    "redux-thunk": "^2.3.0"
   }
 }
