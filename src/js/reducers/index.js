@@ -3,7 +3,8 @@
 import { ADD_ARTICLE, FOUND_BAD_WORD } from '../constants/action-types';
 
 const initialState = {
-  articles: []
+  articles: [],
+  remoteArticles: []
 };
 
 function rootReducer(state = initialState, action) {
@@ -14,13 +15,19 @@ function rootReducer(state = initialState, action) {
   }
 
   if (action.type === FOUND_BAD_WORD) {
-    debugger;
     if(action.payload.errorMessage !== undefined){
       alert(action.payload.errorMessage);
     }
     else{
       alert("Bad words are not allowed!");
     }
+  }
+
+  if (action.type === "DATA_LOADED") {
+    debugger;
+    return Object.assign({}, state, {
+      remoteArticles: state.remoteArticles.concat(action.payload)
+    });
   }
 
   return state;
